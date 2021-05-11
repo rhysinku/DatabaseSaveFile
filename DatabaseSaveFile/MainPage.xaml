@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DatabaseSaveFile.MainPage">
+
+    <StackLayout>
+        <Label Text="Rhysin Villahermosa and Mark Neo Mamalias" HorizontalOptions="CenterAndExpand" FontSize="Large" Margin="0,30,0,0"/>
+        <StackLayout>
+           <!-- <Entry x:Name="itemnum" Placeholder="Item Number" /> -->
+            <Entry x:Name="description" Placeholder="Description"/>
+            <Entry x:Name="price" Placeholder="Price"/>
+            <Entry x:Name="quantity" Placeholder="Quantity"/>
+        </StackLayout>
+
+        <StackLayout>
+            <Button Text="Save" Clicked="BtnAdd_Clicked" HorizontalOptions="CenterAndExpand" CornerRadius="10"/>
+        </StackLayout>
+
+        <CollectionView x:Name="Tabledisplay" Margin="15,0,15,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    
+                    <StackLayout  Padding="10,0,0,0">
+                        <Label Text="Item Number" FontSize="Medium" TextColor="HotPink" FontAttributes="Bold"/>
+                        <Label Text="{Binding ItemNum}" Margin="15,0,0,0" FontSize="15"/>
+                        <Label Text="Description" FontSize="Medium" FontAttributes="Bold"/>
+                        <Label Text="{Binding Desc}" Margin="15,0,0,0" FontSize="15"/>
+                        <Label Text="Price" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="{Binding Price}" Margin="15,0,0,0" FontSize="15"/>
+                        <Label Text="Quantity" FontSize="Medium" FontAttributes="Bold"/>
+                        <Label Text="{Binding Quantity}" Margin="15,0,0,0" FontSize="15"/>
+                        <Label Text="Subtotal" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="{Binding Subtotal}" Margin="15,0,0,0" FontSize="15"/>
+                        <Label Text="------------------------------" FontAttributes="Bold" FontSize="Large"/>
+                        
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+</ContentPage>
